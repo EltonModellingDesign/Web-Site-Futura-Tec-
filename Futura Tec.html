@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futura Tec Site</title>
+    <link rel="stylesheet" href="TecCabeçalhoRodape.css" type="text/css">
+    <style>
+
+        @font-face {
+            font-family: "Agency";
+            src: url(./Conteudo/Fonts/AGENCYR.TTF);
+        }
+        .slide-section{
+            height: 400px;
+            width: 100%;
+            background-image: url(conteudo/Seções/TNT\ Texture.jpg);
+            overflow: hidden;
+            position: relative;
+            
+        }
+        .container-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            align-content: space-between;
+            float: right;
+            margin-top: 120px;
+            height: 280px;
+        }
+        .slide-section span:nth-child(1){
+            position: relative;
+            font-size: 50px;
+            font-family: "Agency";
+            width: 600px;
+            color: white;
+            text-decoration:underline 2px;
+            margin-right: 60px;
+        }
+        .slide-section img{
+            height: 800px;
+            transform: translate(-60px, -225px);
+            position: absolute;
+            
+        }
+        .slide{margin-left: 200px;;margin-bottom: 20px;}
+        .slide a{
+            position: relative;
+            font-family: "Agency";
+            font-size: 30px;
+            text-shadow: 0 0 5px #FFFF00, 0 0 1em #fafa00;
+            color: #FFFCC6;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        
+        .slide svg{
+            fill:none;
+            stroke:#ffff8b;
+            stroke-miterlimit:10;
+            filter:drop-shadow(0 0 10px #fafa00);
+            position: absolute;
+            height: 50px;
+            transform: translate(-80px, 20px);
+            order: 1;
+            z-index: 1;
+
+        }
+        .pontinhos {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 5px;
+            position: relative;
+            box-shadow: 0 0 5px #FFFF00, 0 0 1em #fafa00;
+            background-color:  #FFFCC6;
+            border-radius: 50%;
+            z-index: 5;
+            order: 1;
+        }
+        .p1{cursor: pointer;z-index: 6;}
+        .p2{cursor: pointer;z-index: 6;}
+        .p3{cursor: pointer;z-index: 6;}
+        @media (max-width:700px){
+            .slide-section{display: flex;justify-content: center;align-items: center;}
+            .container-text{display: flex;justify-content: center;flex-direction: column;align-items: center;margin:0;}
+            .slide-section span:nth-child(1){text-align: center;font-size: 40px;margin: 0;}
+            .slide{position: absolute;margin: 0;margin-top: 320px;}
+        }
+        @media (max-width:1200px){
+            
+            .slide-section img{display: none;}
+            
+
+        }
+
+        /*---Busca---*/
+
+        .search-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .busca{
+            display: flex;
+            align-items: center;
+            background-color: #071626;
+            padding: 8px;
+            position: absolute;
+        }
+        .busca a{
+            font-family: "Agency";
+            text-decoration: none;
+            color: white;
+            font-size: 30px;
+            margin: 0 10px;
+        }
+        .espaço{
+            border-radius: 0;
+            border: 0;
+            box-shadow: 0 0 10px #ff005d;
+            margin-left: 5px;
+            height: 25px;
+            width: 300px;
+            outline: none;
+        }
+        @media (max-width:1200px){
+            .busca{position: relative;margin-top: 20px;}
+            .espaço{width: 250px;}
+        }
+
+        /*----Seção Artigos----*/
+
+        .container-artigos{
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        .artigos{
+            display: grid;
+            grid-template-columns: 1fr 200px;
+        }
+        .artigos a:hover{text-shadow: 0 0 5px #FFFF00, 0 0 1em #fafa00;}
+        .artigo1{display: flex;justify-content: center;flex-direction: row;}
+
+        .ImagemP{height: 450px;transform: translate(-200px);transition: 1s;}
+        .maskA1{
+            position: relative;
+            height: 480px;
+            width: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 0;
+            margin-top: 15px;
+        }
+        .maskA1:hover .ImagemP{transform: scale(1.1) translate(-200px);}
+        .textoA1{
+            padding-top: 400px;
+            padding-left: 15px;
+            padding-bottom: 60px;
+            position: absolute;
+            font-family: "Agency";
+            text-decoration: none;
+            color: white;
+            font-size: 30px;
+            z-index: 3;
+            background-image: linear-gradient(360deg,black, rgba(255, 255, 255, 0));
+        }
+
+        .imagemA{height: 350px;transform: translate(-100px);transition: 1s;}
+        .maskA{
+            position: relative;
+            height: 230px;
+            width: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-right: 60px;
+        }
+        .maskA:hover img{transform: scale(1.1) translate(-100px);}
+        .textoA{
+            padding-top: 150px;
+            padding-left: 15px;
+            padding-bottom: 60px;
+            padding-right: 5px;
+            position: absolute;
+            font-family: "Agency";
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            z-index: 3;
+            background-image: linear-gradient(360deg,black, rgba(255, 255, 255, 0));
+        }
+        @media (max-width:1000px){
+             .container-artigos{flex-direction: column;margin-top: 30px;}
+             .artigos{grid-template-rows: 1fr 1fr;grid-template-columns: 1fr;}
+             .artigo1{flex-wrap: wrap; align-items: center;flex-direction: column;}
+             .maskA{margin-left: 60px;}
+             .maskA1{height: 230px;width: 350px;}
+             .textoA1{padding-top: 150px;padding-left: 15px;padding-bottom: 60px;padding-right: 5px;font-size: 25px;z-index: 3;background-image: linear-gradient(360deg,black, rgba(255, 255, 255, 0));}
+             .ImagemP{height: 300px;transform: translate(-100px,-60px); transition: 1s;}
+             .maskA1:hover .ImagemP{transform: scale(1.1) translate(-100px, -60px);}
+        }
+        
+
+        /*----Favoritos----*/
+
+        .favoritos{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: flex-start;
+            justify-content: center;
+        }
+        .titulo-F{
+            font-family: "Agency";
+            font-size: 25px;
+            text-align: center;
+        }
+        .traço1{
+            width: 100%;
+            height: 2px;
+            margin-bottom:  20px; 
+            background-color: #E71E79;
+        }
+        .traços{
+            width: 100%;
+            height: 2px;
+            margin: 30px 0; 
+            background-color: #E71E79;
+        }
+        .conteudoF{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 180px;
+        }
+        .conteudoF a{
+            font-family: "Agency";
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .maskF{
+            height: 150px;
+            width: 150px;
+            overflow: hidden;
+        }
+        .maskF img{height: 150px;transform: translate(-60px);}
+
+        @media (max-width:1200px){
+            .favoritos{order: 2;}
+            .traços{display: none;}
+            .conteudoF a{font-size: 150%;}
+
+
+
+        }
+
+        
+
+
+
+
+
+
+        
+
+    </style>
+</head>
+<body>
+    <header class="cabeçalho"> 
+        <div class="Logo">
+            <img src="conteudo/Cabeçalho/Logo Tec.svg">
+            <label for="checkbox" class="toggle">
+                <ion-icon name="reorder-four-outline"></ion-icon>
+            </label>
+        </div>               
+        <input type="checkbox" id="checkbox" class="checkbox">
+        <nav class="menu">
+            <span class="dot neon1"></span>
+            <span class="dot neon2"></span>
+            <span class="dot neon3"></span>
+            <span class="dot neon4"></span>
+            <span class="dot neon5"></span>
+            <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1420.9 72.1" style="enable-background:new 0 0 1420.9 72.1" xml:space="preserve"><style>.st0{fill:none}</style><path class="st0" d="M17 72.1v-47l12-10h1361l13 10v47"/><path class="st0" d="M616 15.1v19l26 17h438l10 7v14"/></svg>
+            <ul>
+                <li><a href="#">Ultimas Noticias</a></li>
+                <li><a href="#">Mais Lidas</a></li>
+                <li><a href="#">Tutoriais</a></li>
+            </ul>
+            <div class="menu2">
+                <a href="#">Hardware e Tecnologia</a>
+                <a href="#">Programação</a>
+            </div>
+            <div class="menu3">
+                <a href="#">Software e Segurança</a>
+                <a href="#">Criação de Software</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="slide-section" id="slide">
+            <div class="container-text">
+                <span id="textão">Melhor site de tecnologia do Brasil</span>
+                <div class="slide" id="pontinhos">
+                    <svg version="1.1" id="Camada_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 234.3 57.7" style="enable-background:new 0 0 234.3 57.7;" xml:space="preserve">
+                         <polyline class="st0" points="4.5,58 4,24.7 24,4.7 228,4.5 "/>
+                    </svg>
+                    <span class="pontinhos p1" id="p1"></span>
+                    <span class="pontinhos p2" id="p2"></span>
+                    <span class="pontinhos p3" id="p3"></span>
+                    <a href="#" id="next">proximo -></a> 
+                </div>
+            </div>           
+            <span class="pink" id="color"></span>
+            <img src="conteudo/Seções/Textures.svg" alt="textures">           
+        </section>
+        <section class="search-container">
+            <div class="busca">
+                <input type="text" class="espaço">
+                <a href="#">BUSCAR</a>
+            </div>
+            
+        </section>
+        <section class="container-artigos">
+            <div class="artigos">
+                <div class="artigo1">
+                    <figure class="maskA1">
+                        <a href="#" class="textoA1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </a>
+                        <img class="ImagemP" src="conteudo/Seções/Imagem Principal.jpg" alt="Principal">
+                    </figure>
+                    <div>
+                        <figure class="maskA">
+                            <a href="#" class="textoA">Lorem ipsum dolor sit amet, consectetuer adipi</a>
+                            <img class="imagemA" src="conteudo/Seções/Imagem2.jpg" alt="Principal2">
+                        </figure>
+                        <figure class="maskA">
+                            <a href="#" class="textoA">Lorem ipsum dolor sit amet, consectetuer</a>
+                            <img class="imagemA" src="conteudo/Seções/Imagem3.jpg" alt="Principal3">
+                        </figure>
+                    </div>                   
+                </div>
+                <div class="favoritos">
+                    <span class="titulo-F">Os mais favoritos</span>
+                    <span class="traço1"></span>
+                    <div class="conteudoF">
+                        <figure class="maskF">
+                            <img src="conteudo/Seções/Imagem-1F.jpg" alt="1">
+                        </figure>
+                        <a href="#">Lorem ipsum dolor sit amet, consectetuer</a>
+                    </div>
+                    <span class="traços"></span>
+                    <div class="conteudoF">
+                        <figure class="maskF">
+                            <img src="conteudo/Seções/Imagem-2F.png" alt="1">
+                        </figure>                       
+                        <a href="#">Lorem ipsum dolor sit</a>
+                    </div>
+                    <span class="traços"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="rodape">
+        <div class="text1">
+            <H3>Páginas</H3>
+            <a>
+                <a href="#">. Nossos Produtos
+                <br href="#">. Quem Somos
+                <br href="#">. Nossas Unidades
+                <br href="#">. Entre em contato
+            </a>                
+        </div>
+        <div class="text2">
+            <H3>Informações</H3>
+            <p>
+                Empresa Tom’s Store Solutions<br>
+                CNPJ: 003.4584.154-59<br>
+                Cidade São Paulo/SP<br>
+                Rua Semerino Intra Cep:035-850<br>
+                Bairro: Tatuape<br>
+            </p>
+        </div>
+        <div class="text4">
+            <H3>Support</H3>
+            <p> SAC <br> Tel: 0800 7776-9255<br>Whats:<br>(11) 99336-5689</p>
+            <p>Ouvidoria Tel: <br> 0800-7779-6668</p>
+        </div>
+        <div class="text5">
+            <H3>Selos</H3>
+            <a href="#"><img src="Conteudo/Rodapé/site protegido.png" alt="site-protegido" weidth="216,44" height="113,77"></a>
+        </div>
+        <div class="text6">
+            <H5>Redes Sociais</H5>
+            <a href="#"><img src="Conteudo/Rodapé/facebook.png" alt="facebook" weidth="216,44" height="113,77"></a>
+            <a href="#"><img src="Conteudo/Rodapé/Instagran transparente.png" alt="Instagram" weidth="216,44" height="113,77"></a>
+        </div>
+    </footer>
+    <script src="FuturaJavaScript.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
